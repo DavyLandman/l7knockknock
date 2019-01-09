@@ -24,5 +24,5 @@ script:
 
 after_success:
   -  if [ "$NOLIBEVENT" = "1" ]; then sonar-scanner -Dsonar.sources=. -Dsonar.projectKey="DavyLandman_l7knockknock" -Dsonar.cfamily.build-wrapper-output=output; fi
-  -  if [ "$TRAVIS_BRANCH" != "coverity-scan" ]; then bash <(curl -s https://codecov.io/bash) -x "llvm-cov gcov"; fi
+  -  if [ "$TRAVIS_BRANCH" != "coverity-scan" ]; then bash <(curl -s https://codecov.io/bash); fi
 
