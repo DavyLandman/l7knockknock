@@ -509,6 +509,7 @@ int start(struct config* _config) {
                             perror("Cannot allocate pipes");
                             close(conn_sock);
                             free(data);
+                            continue;
                         }
                         data->buffer_filled = 0;
                         data->out_op = NULL;
