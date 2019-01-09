@@ -12,6 +12,7 @@ addons:
     packages:
       - valgrind
       - libevent-dev
+      - golang-go
   sonarcloud:
     organization: "davylandman-github"
 
