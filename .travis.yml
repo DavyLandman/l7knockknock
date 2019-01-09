@@ -2,8 +2,8 @@ language: go
 
 jobs:
   include:
-    - env: NOLIBEVENT=1 CC=clang
-    - env: USELIBEVENT=1 SPEED_FACTOR=2 CC=clang
+    - env: NOLIBEVENT=1 CC=clang TRAVIS_COMPILER=clang TRAVIS_COMPILER=clang
+    - env: USELIBEVENT=1 SPEED_FACTOR=2 CC=clang TRAVIS_COMPILER=clang TRAVIS_COMPILER=clang
 
 addons:
   apt:
