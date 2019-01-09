@@ -20,9 +20,9 @@ install:
   - go get github.com/cespare/xxhash
 
 script:
-  - make clean test COVERAGE=1 DEBUG=1
+  - build-wrapper-linux-x86-64 --out-dir output make clean test COVERAGE=1 DEBUG=1
 
 after_success:
-  - sonar-scanner -Dsonar.sources=. -Dsonar.projectKey="DavyLandman_l7knockknock"
+  - sonar-scanner -Dsonar.sources=. -Dsonar.projectKey="DavyLandman_l7knockknock" -Dsonar.cfamily.build-wrapper-output=output
   -  if [ "$TRAVIS_BRANCH" != "coverity-scan" ]; then bash <(curl -s https://codecov.io/bash) -x "llvm-cov gcov"; fi
 
