@@ -12,7 +12,7 @@ addons:
       - libevent-dev
   sonarcloud:
     organization: "davylandman-github"
-    projectKey: "DavyLandman_l7knockknock"
+    
 
 install:
   - go version
@@ -23,6 +23,6 @@ script:
   - make clean test COVERAGE=1 DEBUG=1
 
 after_success:
-  - sonar-scanner -Dsonar.sources=.
+  - sonar-scanner -Dsonar.sources=. -Dsonar.projectKey: "DavyLandman_l7knockknock"
   -  if [ "$TRAVIS_BRANCH" != "coverity-scan" ]; then bash <(curl -s https://codecov.io/bash) -x "llvm-cov gcov"; fi
 
